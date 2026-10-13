@@ -1,0 +1,14 @@
+services:
+  knopka_landing:
+    container_name: knopka_landing
+    build: ./
+    networks:
+      - network
+    command: ["npm", "run", "preview"]
+    restart: on-failure:5
+    ports:
+      - "3000:3000"
+
+networks:
+  network:
+    name: knopka
